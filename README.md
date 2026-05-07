@@ -12,15 +12,15 @@ https://github.com/CSC207-2026S-UofT/Lab-1
 
 1. Make sure you are logged into GitHub. You should see a button that says `Fork` in the top-right corner of the page.
 Click this button to create a fork of this repository, which will be your own copy of the codebase to edit as you please.
-In the new page that comes up, confirm that you want to create the fork and your own FizzBuzz repository will be created
+In the new page that comes up, confirm that you want to create the fork and your own lab1.FizzBuzz repository will be created
 on GitHub!
    * Note that there is a checkbox for "Copy the main branch only", for this lab this doesn't matter, but in a future lab or for your own project, you may take a second to think if you also want to copy the other branches.
 
 2. Now that you have your own fork of this repository, close this page, go to your fork, and continue with the next instructions.
 
-3. The next step is to get a local copy of your FizzBuzz repository on your own computer.
+3. The next step is to get a local copy of your lab1.FizzBuzz repository on your own computer.
 This is called **cloning** the repository.
-You can do this by clicking the green `Code` button in your FizzBuzz repository on GitHub and copying
+You can do this by clicking the green `Code` button in your lab1.FizzBuzz repository on GitHub and copying
 the HTTPS URL which you will see. You can copy it by clicking the little 'copy' button with the two rectangles on it. Alternatively, you can `git clone` via SSH. You will find more info about this at: https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository
 
 4. Open IntelliJ. If you already have a project open, close that project. From the main screen, choose
@@ -89,9 +89,9 @@ Let's explore a solution written in Java.
 
 ```java
 /**
- * Solve the FizzBuzz challenge.
+ * Solve the lab1.FizzBuzz challenge.
  */
-class FizzBuzz {
+class lab1.FizzBuzz {
 
     public static void main(String[] args) {
 
@@ -124,7 +124,7 @@ class FizzBuzz {
 }
 ```
 
-- [ ] Open `FizzBuzz.java` in the `src` directory and click the run button in the top left corner.
+- [ ] Open `lab1.FizzBuzz.java` in the `src` directory and click the run button in the top left corner.
 
 If you don't see this button, you may need to mark `src` as the `Sources Root` for the project. You can do this
 by right-clicking the `src` directory in the `Project` tab and near the bottom of the context menu
@@ -149,7 +149,7 @@ strike you as either similar to or different from Python.
 Tip: IntelliJ works just like PyCharm, so you can place breakpoints and step through the code using the debugger in the same way.
 You might find it informative to try stepping through the code to see what it is doing on a few iterations.
 
-## The Main Function
+## The lab1.Main Function
 
 In Python, any code that you write in a file will get run when you execute the file.
 This is not the case in Java. You must define a method called `main` in a class
@@ -199,14 +199,14 @@ You'll learn more about the various access modifiers in your Java readings soon.
 
 Now that you've made your first edits to your code, you should ask git to save these changes for you.
 
-- [ ] Open the Terminal tab in IntelliJ and type `git status`, it will show you that you have modified `FizzBuzz.java` (and this README too!).
+- [ ] Open the Terminal tab in IntelliJ and type `git status`, it will show you that you have modified `lab1.FizzBuzz.java` (and this README too!).
 
-We will save our local changes to `FizzBuzz.java` and then push the changes to your GitHub repository using
+We will save our local changes to `lab1.FizzBuzz.java` and then push the changes to your GitHub repository using
 a sequence of three git commands:
 
-1. `git add src/FizzBuzz.java`
-   - this tells git to "stage" our changes to FizzBuzz.java. If you run `git status` again, you will see
-   that `FizzBuzz.java` has a new status.
+1. `git add src/lab1.FizzBuzz.java`
+   - this tells git to "stage" our changes to lab1.FizzBuzz.java. If you run `git status` again, you will see
+   that `lab1.FizzBuzz.java` has a new status.
 2. `git commit -m "refactored to extract helper method"`
    - this actually records your changes to all "staged" files to your local git repository. You can again
    run `git status` to see what has happened.
@@ -250,22 +250,22 @@ Now, back to exploring the code!
 
 To briefly observe what private does, let's create a new class.
 
-- [ ] Right-click on `src` and select `New —> Java Class`. Name it `Main`. This will create a `Main.java` file.
+- [ ] Right-click on `src` and select `New —> Java Class`. Name it `lab1.Main`. This will create a `lab1.Main.java` file.
 
-We'll write a main method which will attempt to call `FizzBuzz.doFizzBuzz` (or whatever you called
+We'll write a main method which will attempt to call `lab1.FizzBuzz.doFizzBuzz` (or whatever you called
 your extracted helper method).
 
 - [ ] To quickly generate `main`, you can start typing `psvm` in IntelliJ and then press Enter to accept the
 autocomplete — it will generate an empty "public static void main" (psvm) method for you. Neat!
 
-- [ ] In the body of this main method, type `FizzBuzz.`. You'll see that the private helper method doesn't
-appear in the autocomplete, but `FizzBuzz.main` does! If you wanted to be able to call the helper from
-inside `Main.java`, you would need to change the access modifier on the helper.
+- [ ] In the body of this main method, type `lab1.FizzBuzz.`. You'll see that the private helper method doesn't
+appear in the autocomplete, but `lab1.FizzBuzz.main` does! If you wanted to be able to call the helper from
+inside `lab1.Main.java`, you would need to change the access modifier on the helper.
 It turns out that IntelliJ can help us out with this too!
 
 ### Task 3.1: Changing access modifiers using IntelliJ
 
-- [ ] In your main method in `Main.java`, try calling your private helper — something like `FizzBuzz.doFizzBuzz(5);`.
+- [ ] In your main method in `lab1.Main.java`, try calling your private helper — something like `lab1.FizzBuzz.doFizzBuzz(5);`.
 
 You'll see that IntelliJ flags that you are trying to access something that is private. Unlike Python,
 Java won't even let you run the code when it detects this kind of violation of an access modifier (it is an
@@ -276,18 +276,18 @@ error and not just a warning).
 - [ ] Click `More actions...` and you'll see a list of the various possible access modifiers.
 These will be explained in more detail in your readings, but for now we can just make the method public.
 
-- [ ] Choose this fix and the error will go away. Try running `Main.java` to see if it outputs
+- [ ] Choose this fix and the error will go away. Try running `lab1.Main.java` to see if it outputs
 what you expect.
 
-### Task 3.2: Calling `FizzBuzz.main` from `Main.main`
+### Task 3.2: Calling `lab1.FizzBuzz.main` from `lab1.Main.main`
 
-Suppose we wanted to execute a line like `FizzBuzz.main();` in `Main.main`. Why doesn't this work?
+Suppose we wanted to execute a line like `lab1.FizzBuzz.main();` in `lab1.Main.main`. Why doesn't this work?
 
-If you add this line to `Main.main`, IntelliJ will tell you the problem and suggest some fixes,
+If you add this line to `lab1.Main.main`, IntelliJ will tell you the problem and suggest some fixes,
 but neither of them will *directly* fix the problem.
 
-* Talk with your neighbours to try to find the best way to resolve the problem so that you can run `Main.java` and
-see the expected output of executing `FizzBuzz.main`. If you come up with different ways to do this,
+* Talk with your neighbours to try to find the best way to resolve the problem so that you can run `lab1.Main.java` and
+see the expected output of executing `lab1.FizzBuzz.main`. If you come up with different ways to do this,
 think about how they differ and which might be best.
 
 And that's all we wanted to highlight with this first example. You'll see and learn much more Java syntax as you work
@@ -399,7 +399,7 @@ We'll briefly summarize two approaches you might take for this:
 
 ### Forking and requesting to make a contribution
 
-1. Share your FizzBuzz GitHub repository URL with another student in the class.
+1. Share your lab1.FizzBuzz GitHub repository URL with another student in the class.
 
 2. Have them make a fork of your repository; just as you did at the start of this activity.
 
